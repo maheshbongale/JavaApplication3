@@ -1,0 +1,114 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="jquery.js" type="text/javascript">
+
+        </script>
+
+
+        <script type="text/javascript" >
+
+        ///////To create the table
+
+        var flag=true;
+        var X=new Array();
+         var Y=new Array();
+         function chess()
+         {
+             var html='<table id="tid" border="1" cellspacing=1 cellpadding=10>'
+              for(var i=0;i<3;i++)
+              {
+                  html+='<tr>'
+                  for(var j=0;j<3;j++)
+                  {
+                        html += ''
+                        +'<td id="'+j+'">'
+                        //alert(j);
+                        +'</td>'
+                        //alert(j);
+                        // tick(j);
+                  }
+
+              +'</tr>'
+
+              }
+              +'</table>';tick(j);
+
+             document.write(html);
+             tick();
+
+
+            }
+
+            ///////to check the cell with 'X' or 'O'
+
+            function tick()
+            {
+              for(var i=0;i<3;i++)
+              {
+                for(var j=0;j<3;j++)
+                {
+                    //alert(j);
+                    $("td").click(function()
+                   {
+                    // alert("t="+j);
+                     if($(this).text()=="")
+                     {
+                        if(flag==true)
+                        {
+                            $(this).text("X");
+                            checktick(j,"X");
+                            flag=false;
+                        }
+                        else
+                        {
+                            $(this).text("O");
+                            checktick(j,"X");
+                            flag=true;
+                        }
+                     }
+                  });
+                }
+
+              }
+
+              //alert(j);
+            }
+
+            function checktick(val,alpha)
+            {
+
+                if(alpha=='X')
+                {
+                    for(var i=0;i<3;i++)
+                    {
+                        X[i]=val;
+                        //alert(X[i]);
+
+                    }
+                }
+                else
+                {
+                    for(var i=0;i<3;i++)
+                    {
+                        O[i]=val;
+                    }
+                }
+            }
+
+          chess()
+
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Chess</title>
+        <style type="text/css">
+            .black
+            {
+                background-color: #000;
+            }
+            .white
+            {
+                background-color: #fff;
+            }
+        </style>
+        <script type="text/javascript">        
+                
+function chess()
+{
+  //var letters = ' abcdefgh';
+  var tmp = 1; 
+  var html = '<table cellspacing="0.5" cellpadding="5" border="1">'
+  for(var i=8; i>0; i--)
+  {
+    tmp*=-1;    
+    html += '<tr>'
+    for(var j=0; j<8; j++)
+    {
+      if(i==9)
+      {
+          html+='<td></td>'
+      } /* top row for naming */
+      else if(j==8)
+      {
+          html+='<td>'+'</td>' 
+      } /* right column for naming */
+      else
+      {
+        tmp*=-1; 
+        var cel = (tmp<0?'black':'white');     
+        html += ''
+          +'<td class="'+cel+'">'
+          +'<div style="margin:0; padding:70; position:relative;">'
+          +'<div style="position:absolute; bottom:0; right:0;"></div>'
+          +'</div>'
+          +'</td>'
+      }
+    }
+    html += '</tr>'
+  }
+  html +='</table>'
+  document.write(html)
+}
+chess()
+</script>
+
+    </head>
+    <body>
+        
+    </body>
+</html>

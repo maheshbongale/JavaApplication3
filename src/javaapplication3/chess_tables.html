@@ -1,0 +1,64 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style type="text/css">
+            .black
+            {
+                background-color: #000;
+                width: 50px;
+                height: 50px;
+                float: left;
+                border: 1px solid;                
+            }
+            .white
+            {
+                width: 50px;
+                height: 50px;
+                background-color: #fff;
+                float: left;
+                border: 1px solid;
+            }
+        </style>
+        <script type="text/javascript">
+            var temp=1;
+         function chess()
+         {
+             var html='<table border="1">'
+               for(var i=0;i<8;i++)
+              {   
+                  html+='<tr>'
+                  temp*=-1;
+                  for(var j=0;j<8;j++)
+                  {
+                    temp*=-1;
+                    if(temp<0)
+                        var cls='black';
+                    else
+                        var cls='white';
+                    html += ''                   
+                    +'<td>'                    
+                    +'<div class="'+cls+'">'
+                    +'</div>'
+                    +'</td>'                
+                 }
+              +'</tr>'        
+              }
+              
+              +'</table>'
+                      document.write(html)
+          }
+          chess()
+        </script>
+        
+        
+    </head>
+    <body>
+        
+    </body>
+</html>
